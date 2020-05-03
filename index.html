@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/18a57a0e15.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="index.css" rel="stylesheet" type="text/css">
+        <title>CSS Flexbox</title>
+        
+    </head>
+    <body>
+        <div id="menu-button-container">
+            <div  id="menu-button" onclick="handleClick()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+          </div>
+        </div>
+        <header id="resp-top-header"><h1>CSS Flex Box</h1></header>
+        <nav id="navbar">
+            <header id="top-header"><h1>CSS Flex Box</h1></header>
+            <ul id="nav-list">
+                <li><a onclick="handleClick()" class="nav-link" href="#Introduction">Introduction</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#Things_You_Should_Already_Know">Things You Should Already Know</a></li>
+                <li><h4 class ="menu-heading">Parent Properties</h4></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#display">display</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#flex-direction">flex-direction</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#flex-wrap">flex-wrap</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#flex-flow">flex-flow</a></li>
+                <li><a onclick="handleClick()" class="nav-link" href="#justify-content">justify-content</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#align-items">align-items</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#align-content">align-content</a></li>
+                <li><h4 class ="menu-heading">Child Properties</h4></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#order">order</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#flex-grow">flex-grow</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#flex-shrink">flex-shrink</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#flex-basis">flex-basis</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#flex">flex</a></li>
+                <li><a onclick="handleClick()"class="nav-link" href="#align-self">align-self</a></li>
+            </ul>
+       
+
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="Introduction">
+                <header><h2>Introduction</h2></header>
+                <p>This documentation will overview the basic concepts of CSS Flex Box,
+                    a very useful tool in the realm of CSS. Once you understand CSS Flex Box,
+                    it can make creating dynamic webpage layout almost seem effortless, particularly
+                    if you need the layout to be responsive. 
+                </p>
+            </section>
+            <section  class="main-section" id="Things_You_Should_Already_Know">
+                <header><h2>Things You Should Already Know</h2></header>
+                <p>Before you get started, there are some things you shold already be familiar with.</p>
+                <ul>
+                    <li>You should have a good knowledge of HTML markup, how to structure elements
+                        on a webpage, and how class and id attributes can be assigned to elements.
+                    </li>
+                    <li>You should also have a basic understanding of CSS itself before attempting to 
+                        understand the concepts in this documentation. Particularly, how CSS Properties
+                        are structured and how they interact with the HTML document.
+                    </li>
+                </ul>
+            </section>
+
+            <header class="division"><h2>Parent Properties (flex container)</h2></header>
+
+            <section class="main-section" id="display">
+                <header><h2>display</h2></header>
+                <p>The display property is used to define the parent element(container)
+                    as a flex container. It can be set to either<em>flex</em> or <em>inline-flex</em>.
+                    <div class="code-box top">
+                        <code>
+                            .container {
+                                <br/>
+                                display: flex;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <span>OR</span>
+                    <div class="code-box top">
+                        <code>
+                            .container {
+                                <br/>
+                                display: inline-flex;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <p>The difference between the two is often confused with the
+                        <a href="#flex-direction">flex-direction</a> property. Here is a brief description.</p>
+                    <ul>
+                        <li><strong>flex:</strong> Child elements are considered block elements, taking
+                        up all available space in their parent container.</li>
+                        <li><strong>inline-flex:</strong> Child elements are considered inline elements, taking up only 
+                        the space that is occupied by their own contents.</li>
+                    </ul>
+                    <p>For more information on the on the difference between <em>block elements</em> and
+                        <em>inline elements</em>, click <a href="https://www.pluralsight.com/blog/film-games/understand-inline-and-block-level-elements">here</a>.</p>
+                </p>
+            </section>
+            <section class="main-section" id="flex-direction">
+                <header><h2>flex-direction</h2></header>
+                <p>The flex-direction property defines the axis and direction in which
+                    the flex-itmes are to be placed.
+                    <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .container {
+                                <br/>
+                                flex-direction: row;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box">
+                        <div class="diagram-container">
+                            <div class="blue"></div>
+                            <div class="red"></div>
+                            <div class="green"></div>
+                            <div class="yellow"></div>
+                        </div>
+                        
+                    </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    flex-direction: row-reverse;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container row-reverse">
+                                <div class="blue"></div>
+                                <div class="red"></div>
+                                <div class="green"></div>
+                                <div class="yellow"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    flex-direction: column;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container column">
+                                <div class="blue"></div>
+                                <div class="red"></div>
+                                <div class="green"></div>
+                                <div class="yellow"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    flex-direction: column-reverse;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container column-reverse">
+                                <div class="blue"></div>
+                                <div class="red"></div>
+                                <div class="green"></div>
+                                <div class="yellow"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <ul>
+                        <li><strong>row(default):</strong> Places items from left to right
+                        on the horizontal axis</li>
+                        <li><strong>row-reverse:</strong> Places items from right to left 
+                        on the horizontal axis.</li>
+                        <li><strong>column:</strong> Places items from top to bottom on vertical
+                        axis.</li>
+                        <li><strong>column-reverse:</strong> Places items from bottom to top on vertical
+                             axis.</li>
+                    </ul>
+                </p>
+            </section>
+            <section class ="main-section"id="flex-wrap">
+                <header><h2>flex-wrap</h2></header>
+                <p>The flex-wrap property decides whether all the flex items should be 
+                    placed on one row/column or if they should wrap onto the next column. By 
+                    default items will not wrap onto the next row/column. 
+                </p>
+                <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .container {
+                                <br/>
+                                flex-direction: nowrap;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box">
+                        <div class="diagram-container nowrap">
+                            <div class="blue"></div>
+                            <div class="red"></div>
+                            <div class="green"></div>
+                            <div class="yellow"></div>
+                            <div class="purple"></div>
+                            <div class="orange"></div>
+                            <div class="pink"></div>
+                            <div class="lightgreen"></div>
+                            <div class="darkred"></div>
+                        </div>
+                        
+                    </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    flex-direction: wrap;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container wrap">
+                                <div class="blue"></div>
+                                <div class="red"></div>
+                                <div class="green"></div>
+                                <div class="yellow"></div>
+                                <div class="purple"></div>
+                            <div class="orange"></div>
+                            <div class="pink"></div>
+                            <div class="lightgreen"></div>
+                            <div class="darkred"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    flex-wrap: wrap-reverse;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container wrap-reverse">
+                                <div class="blue"></div>
+                                <div class="red"></div>
+                                <div class="green"></div>
+                                <div class="yellow"></div>
+                                <div class="purple"></div>
+                            <div class="orange"></div>
+                            <div class="pink"></div>
+                            <div class="lightgreen"></div>
+                            <div class="darkred"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <ul>
+                        <li><strong>nowrap(default): </strong> Places items all on 
+                        one row/column.</li>
+                        <li><strong>wrap: </strong> Allows items to wrap onto 
+                            an additional row/column, from top to bottom for rows, or left to right 
+                        for columns.</li>
+                        <li><strong>wrap-reverse: </strong> Allows items to wrap onto 
+                            an additional row/column, from bottom to top for rows, or right to left 
+                        for columns.</li>
+                    </ul>
+
+
+            </section>
+            <section class ="main-section"id="flex-flow">
+                <header><h2>flex-flow</h2></header>
+                <p>The flex-flow property combines the <em>flex-direction</em> and the <em>flex-wrap</em>
+                 into one property with the default value being <em>row nowrap</em></p>
+                 <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .container {
+                                <br/>
+                                flex-flow: column wrap-reverse;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box">
+                        <div class="diagram-container flow-column-wrap-reverse">
+                            <div class="blue"></div>
+                            <div class="red"></div>
+                            <div class="green"></div>
+                            <div class="yellow"></div>
+                            <div class="purple"></div>
+                            <div class="orange"></div>
+                            <div class="pink"></div>
+                            <div class="lightgreen"></div>
+                            <div class="darkred"></div>
+                        </div>
+                        
+                    </div>
+                    </div>
+
+            </section>
+            <section class ="main-section"id="justify-content">
+                <header><h2>justify-content</h2></header>
+                <p>The justify-content property deals with the spacing around the flex items on
+                    a row/column.</p>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    justify-content: flex-start;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container">
+                                <div class="blue"></div>
+                                <div class="red"></div>
+                                <div class="green"></div>
+                                <div class="yellow"></div>
+                            </div>
+                            
+                        </div>
+                        </div>
+                        <div class ="illustration-container">
+                            <div class="code-box">
+                                <code>
+                                    .container {
+                                        <br/>
+                                        justify-content: flex-end;
+                                        <br/>
+                                    }
+                                </code>
+                            </div>
+                            <div class="diagram-box">
+                                <div class="diagram-container justify-content-flex-end">
+                                    <div class="blue"></div>
+                                    <div class="red"></div>
+                                    <div class="green"></div>
+                                    <div class="yellow"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class ="illustration-container">
+                            <div class="code-box">
+                                <code>
+                                    .container {
+                                        <br/>
+                                        justify-content: center;
+                                        <br/>
+                                    }
+                                </code>
+                            </div>
+                            <div class="diagram-box">
+                                <div class="diagram-container justify-content-center1">
+                                    <div class="blue"></div>
+                                    <div class="red"></div>
+                                    <div class="green"></div>
+                                    <div class="yellow"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class ="illustration-container">
+                            <div class="code-box">
+                                <code>
+                                    .container {
+                                        <br/>
+                                        justify-content: space-between;
+                                        <br/>
+                                    }
+                                </code>
+                            </div>
+                            <div class="diagram-box">
+                                <div class="diagram-container justify-content-space-between">
+                                    <div class="blue"></div>
+                                    <div class="red"></div>
+                                    <div class="green"></div>
+                                    <div class="yellow"></div>
+                                </div>
+                                
+                            </div>
+                            </div>
+                            <div class ="illustration-container">
+                                <div class="code-box">
+                                    <code>
+                                        .container {
+                                            <br/>
+                                            justify-content: space-around;
+                                            <br/>
+                                        }
+                                    </code>
+                                </div>
+                                <div class="diagram-box">
+                                    <div class="diagram-container justify-content-space-around">
+                                        <div class="blue"></div>
+                                        <div class="red"></div>
+                                        <div class="green"></div>
+                                        <div class="yellow"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class ="illustration-container">
+                                <div class="code-box">
+                                    <code>
+                                        .container {
+                                            <br/>
+                                            justify-content: space-evenly;
+                                            <br/>
+                                        }
+                                    </code>
+                                </div>
+                                <div class="diagram-box">
+                                    <div class="diagram-container justify-content-space-evenly">
+                                        <div class="blue"></div>
+                                        <div class="red"></div>
+                                        <div class="green"></div>
+                                        <div class="yellow"></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <ul>
+                                <li><strong>flex-start(default):</strong> The flex items are placed towards
+                                the start of the flex-direction.</li>
+                                <li><strong>flex-end:</strong> The flex items are placed towards the end 
+                                of the flex-direction.</li>
+                                <li><strong>center:</strong> The flex items are placed towards the center of the 
+                                    main axis.></li>
+                                <li><strong>space-between:</strong> The flex items are evenly distributed on the main axis 
+                                with the first and last items at each end of the container.</li>
+                                <li><strong>space-around:</strong> The flex items are placed on the main axis so that there is an 
+                                equal amount of space allotted to <em>both</em> sides of <em>each</em> item.</li>
+                                <li><strong>space-evenly:</strong> The flex items are placed on the main axis so that there is the 
+                                same amount of space between each item and the start and end points of the main axis.</li>    
+                            </ul>
+                           
+
+            </section>
+            <section class ="main-section"id="align-items">
+                <header><h2>align-items</h2></header>
+                <p>The align-items property is similar to the justify-content property except
+                    it deals with the spacing on the <em>cross axis</em> on a given line of items.
+                </p>
+                <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .container {
+                                <br/>
+                                align-items: stretch;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box">
+                        <div class="diagram-container stretch1">
+                            <div class="blue flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                        </div>
+                        
+                    </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    align-items: flex-start;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container stretch1 align-items-flex-start">
+                                <div class="blue flexy-box"></div>
+                                <div class="red flexy-box"></div>
+                                <div class="green flexy-box"></div>
+                                <div class="yellow flexy-box"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    align-items: flex-end;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container stretch1 align-items-flex-end">
+                                <div class="blue flexy-box"></div>
+                                <div class="red flexy-box"></div>
+                                <div class="green flexy-box"></div>
+                                <div class="yellow flexy-box"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    align-items: center;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container stretch1 align-items-center1">
+                                <div class="blue flexy-box"></div>
+                                <div class="red flexy-box"></div>
+                                <div class="green flexy-box"></div>
+                                <div class="yellow flexy-box"></div>
+                            </div>
+                            
+                        </div>
+                        </div>
+                        <div class ="illustration-container" >
+                            <div class="code-box">
+                                <code>
+                                    .container {
+                                        <br/>
+                                        align-items: baseline;
+                                        <br/>
+                                    }
+                                </code>
+                            </div>
+                            <div class="diagram-box">
+                                <div class="diagram-container stretch1 align-items-baseline">
+                                    <div class="blue flexy-box">B</div>
+                                    <div class="red flexy-box">R</div>
+                                    <div class="green flexy-box">G</div>
+                                    <div class="yellow flexy-box">Y</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <ul>
+                            <li><strong>stretch(default):</strong> The flex items stretch to fill their
+                            container on the cross axis</li>
+                            <li><strong>flex-start:</strong> The flex items are placed towards
+                            the start of the cross axis.</li>
+                            <li><strong>flex-end:</strong> The flex items are placed towards the end 
+                            of the cross axis.</li>
+                            <li><strong>center:</strong> The flex items are centered on the 
+                                cross axis.></li>
+                            <li><strong>baseline:</strong> The baselines of the flex items are centered
+                                on the cross axis.</li>
+                            
+                        </ul>
+            </section>
+            <section class ="main-section"id="align-content">
+                <header><h2>align-content</h2></header>
+                <p>The align-content property is similar to the align-items property in that it deals with the spacing
+                    on the cross axis, but different in the sense that it only works when there is more than one line of 
+                    flex items. 
+                </p>
+                <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .container {
+                                <br/>
+                                align-content: stretch;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box">
+                        <div class="diagram-container align-content-stretch2">
+                           
+                            <div class="blue flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            <div class="blue flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            
+                        </div>
+                        
+                    </div>
+                    </div>
+                <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .container {
+                                <br/>
+                                align-content: flex-start;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box ">
+                        <div class="diagram-container align-content-flex-start">
+                            <div class="blue flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            <div class="blue flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            
+                        </div>
+                        
+                    </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    align-content: flex-end;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container align-content-flex-end">
+                            <div class="blue flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            <div class="blue flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    align-content: center;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container align-content-center2">
+                                <div class="blue flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            <div class="blue flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class ="illustration-container">
+                        <div class="code-box">
+                            <code>
+                                .container {
+                                    <br/>
+                                    align-content: space-between;
+                                    <br/>
+                                }
+                            </code>
+                        </div>
+                        <div class="diagram-box">
+                            <div class="diagram-container align-content-space-between">
+                                <div class="blue flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            <div class="blue flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            
+                            </div>
+                            
+                        </div>
+                        </div>
+                        <div class ="illustration-container">
+                            <div class="code-box">
+                                <code>
+                                    .container {
+                                        <br/>
+                                        align-content: space-around;
+                                        <br/>
+                                    }
+                                </code>
+                            </div>
+                            <div class="diagram-box">
+                                <div class="diagram-container align-content-space-around">
+                                    <div class="blue flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            <div class="blue flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class ="illustration-container">
+                            <div class="code-box">
+                                <code>
+                                    .container {
+                                        <br/>
+                                        align-content: space-evenly;
+                                        <br/>
+                                    }
+                                </code>
+                            </div>
+                            <div class="diagram-box">
+                                <div class="diagram-container align-content-space-evenly">
+                                    <div class="blue flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            <div class="blue flexy-box"></div>
+                            <div class="yellow flexy-box"></div>
+                            <div class="pink flexy-box"></div>
+                            <div class="red flexy-box"></div>
+                            <div class="purple flexy-box"></div>
+                            <div class="lightgreen flexy-box"></div>
+                            <div class="green flexy-box"></div>
+                            <div class="orange flexy-box"></div>
+                            <div class="darkred flexy-box"></div>
+                            
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <ul>
+                            <li><strong>stretch(default):</strong> The lines of flex items stretch to 
+                                take up the remaining space on the cross axis.</li>
+                            <li><strong>flex-start:</strong> The lines of flex items are placed towards
+                            the start of the container on the cross axis.</li>
+                            <li><strong>flex-end:</strong> The lines of flex items are placed towards the end 
+                            of the containeron the cross axis.</li>
+                            <li><strong>center:</strong> The lines of flex items are placed towards the center of the 
+                                cross axis.></li>
+                            <li><strong>space-between:</strong> The lines of flex items are evenly distributed on the cross axis 
+                            with the first and last lines of flex items at each end of the container.</li>
+                            <li><strong>space-around:</strong> The lines of flex items are placed on the cross axis so that there is an 
+                            equal amount of space allotted to <em>both</em> sides of <em>each</em> line of items.</li>
+                            <li><strong>space-evenly:</strong> The lines of flex items are placed on the cross axis so that there is the 
+                            same amount of space between each line of items and the start and end points of the cross axis.</li>    
+                        </ul>
+            </section>
+
+            <header class ="division"><h2>Child Properties (flex-items)</h2></header>
+
+            <section class ="main-section"id="order">
+                <header><h2>order</h2></header>
+                <p>The order property is used to manipulate the order of flex items. This property 
+                    accepts negative values and positive values.
+                </p>
+                <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .item4 {
+                                <br/>
+                                order: -1;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box">
+                        <div class="diagram-container">
+                            <div class="purple item">item 1</div>
+                            <div class="orange item">item 2</div>
+                            <div class="pink item">item 3</div>
+                            <div class="lightgreen item order">item 4</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class ="main-section"id="flex-grow">
+                <header><h2>flex-grow</h2></header>
+                <p>The flex-grow property allows an item to grow in proportion to the other items.
+                    If all the items have a flex-grow property set to 1, they will each take up the same space. If you change one of the items
+                    flex grow property to a value of 2, then it will attempt to take up twice as much space 
+                    as the other items if necessary. The default value for the flex-grow property is 0 and it does not accept negative values. 
+                </p>
+                <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .item4 {
+                                <br/>
+                                flex-grow: 2;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box">
+                        <div class="diagram-container">
+                            <div class="purple grow item">item 1</div>
+                            <div class="orange grow item">item 2</div>
+                            <div class="pink item grow">item 3</div>
+                            <div class="lightgreen item grow2">item 4</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class ="main-section"id="flex-shrink">
+                <header><h2>flex-shrink</h2></header>
+                <p>The flex-shrink property allows an item to shrink in proportion to the other items.
+                    If all the items have a flex-shrink property set to 1(default), they will each take up the same space. If you change one of the items
+                    flex shrink property to a value of 3, then it will attempt to take up three times less space 
+                    as the other items if necessary. The default value for the flex-shrink property is 1 and it does not accept negative values. 
+                </p>
+                <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .item4 {
+                                <br/>
+                                flex-shrink: 3;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box">
+                        <div class="diagram-container">
+                            <div class="purple item">item 1</div>
+                            <div class="orange item">item 2</div>
+                            <div class="pink item">item 3</div>
+                            <div class="lightgreen item shrink">item 4</div>
+                            <div class="darkred item">item 5</div>
+                            <div class="purple item">item 6</div>
+                            <div class="orange item">item 7</div>
+                            <div class="pink item">item 8</div>
+                            <div class="darkred item">item 9</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class ="main-section"id="flex-basis">
+                <header><h2>flex-basis</h2></header>
+                <p>The flex-basis property represents the default size of an item 
+                    before the rest of the space is allotted. It can either be set to a length(eg. 40px, 35% etc.) or 
+                    it can be set to <em>auto</em>(default) which is based on the width or height value for that item. When set to 
+                    0, the space around the item is not accounted for, but if set to auto, the space is allotted based on 
+                    the item's flex grow property.
+                </p>
+                <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .item4 {
+                                <br/>
+                                flex-basis: 20vw;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box">
+                        <div class="diagram-container">
+                            <div class="purple item">item 1</div>
+                            <div class="orange item">item 2</div>
+                            <div class="pink item">item 3</div>
+                            <div class="lightgreen item basis">item 4</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class ="main-section" id="flex">
+                <header><h2>flex</h2></header>
+                <p>The flex property is the combintaion of <em>flex-grow</em>, 
+                <em>flex-shrink</em> and <em>flex-basis</em> respectively with 
+            flex-shrink and flex-basis being oprional. The default is 0 1 auto.</p>
+            <div class ="illustration-container">
+                <div class="code-box">
+                    <code>
+                        .item4 {
+                            <br/>
+                            flex: 2 2 auto;
+                            <br/>
+                        }
+                    </code>
+                </div>
+                <div class="diagram-box">
+                    <div class="diagram-container flex-container">
+                        <div class="purple item">item 1</div>
+                        <div class="orange item">item 2</div>
+                        <div class="pink item">item 3</div>
+                        <div class="lightgreen item flex-example">item 4</div>
+                    </div>
+                    
+                </div>
+            </div>
+            </section>
+            <section class ="main-section" id="align-self">
+                <header><h2>align-self</h2></header>
+                <p>The align-self property can be used to override the default alignment or
+                    the alignment set by the <em><a href="#align-items">align-items</a></em>
+                 property. The default value is <em>auto</em> and can be used to return to the 
+                original alignment if necessary.</p>
+                 <div class ="illustration-container">
+                    <div class="code-box">
+                        <code>
+                            .item4 {
+                                <br/>
+                                align-self: center;
+                                <br/>
+                            }
+                        </code>
+                    </div>
+                    <div class="diagram-box">
+                        <div class="diagram-container stretch1">
+                            <div class="purple item">item 1</div>
+                            <div class="orange item">item 2</div>
+                            <div class="pink item">item 3</div>
+                            <div class="lightgreen item align">item 4</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+            </section>
+           
+          
+        </main>
+
+        
+       
+        <script>
+            const navbar= document.getElementById("navbar");
+            const mainDoc= document.getElementById("main-doc");
+            const menu=document.getElementById("menu-button");
+            function resize () {
+                if (window.innerWidth>768){
+                    navbar.style.display="block";
+                    mainDoc.classList.remove("hide");
+                }
+                else if (window.innerWidth<=768){
+                    mainDoc.classList.remove("hide");
+                    menu.classList.remove("change", "remove");
+                    navbar.style.display="none";
+
+                }
+                console.log(menu.classList)
+            }
+            function handleClick (){
+                console.log(menu.classList);
+                if (window.innerWidth<=768){
+                if (menu.classList.length===0 || menu.className==="remove"){
+                    if (menu.className==="remove"){
+                        menu.classList.remove("remove");
+
+                    }
+                    menu.classList.add("change")
+                    mainDoc.classList.add("hide");
+                    navbar.style.display="block";
+                } else if (menu.className==="change"){
+                    menu.classList.remove("change");
+                    menu.classList.add("remove");
+                    mainDoc.classList.remove("hide")
+                    navbar.style.display="none"
+                }
+            }
+            }
+            window.onresize = resize;
+
+        </script>
+    </body>
+</html>

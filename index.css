@@ -8,6 +8,7 @@ body {
     height: 10vw;
     background-color: aqua;
     display: flex;
+    display: -webkit-flex;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     
@@ -19,43 +20,30 @@ body {
 
 
 .row-reverse{
-    
-   
-    -webkit-animation-name: rowReverse;
-    -webkit-animation-duration: 4s;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-fill-mode: infinite;
-    -webkit-animation-delay: 0ms;
-    animation-name: rowReverse;
-    animation-duration: 4.0s;
+    flex-direction: row-reverse;
+    animation: rowReverse 4.0s forwards;
     animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    animation-delay: 0ms;
 }
 @keyframes rowReverse{
- 50%{                
-        display: -webkit-flex;
+ 0%{
+     flex-direction: row;
          display: flex;
-         -webkit-flex-flow: row nowrap;
-         flex-direction: row;
-         
 }
  100%{
-    display: -webkit-flex;
-    -webkit-flex-flow: row-reverse nowrap;
     display: flex;
     flex-direction: row-reverse;
  }
-
 }
 .column{
     height: 45vw;
     animation: column1 4.0s forwards;
     animation-iteration-count: infinite;
+    flex-direction: column;
 }
 @keyframes column1{
  0%{
          display: flex;
+         flex-direction: row;
 }
  100%{
     display: flex;
@@ -66,10 +54,12 @@ body {
     height: 45vw;
     animation: column2 4.0s forwards;
     animation-iteration-count: infinite;
+    flex-direction: column-reverse;
 }
 @keyframes column2{
  0%{
          display: flex;
+         flex-direction: row;
 }
  100%{
     display: flex;
@@ -78,26 +68,17 @@ body {
 }
 .nowrap{
     height: 20vw;
-    animation: wrap1 4.0s forwards;
-    animation-iteration-count: infinite;
-}
-@keyframes wrap1{
- 0%{
-         display: flex;
-}
- 100%{
-    display: flex;
-    wrap: nowrap;
- }
 }
 .wrap{
     height: 20vw;
     animation: wrap2 4.0s forwards;
     animation-iteration-count: infinite;
+    flex-wrap: wrap
 }
 @keyframes wrap2{
  0%{
          display: flex;
+         flex-wrap: nowrap;
 }
  100%{
     display: flex;
@@ -108,10 +89,12 @@ body {
     height: 20vw;
     animation: wrap3 4.0s forwards;
     animation-iteration-count: infinite;
+    flex-wrap: wrap-reverse;
 }
 @keyframes wrap3{
  0%{
          display: flex;
+         flex-wrap: nowrap;
 }
  100%{
     display: flex;
@@ -122,10 +105,14 @@ body {
     height: 60vw;
     animation: flow 4.0s forwards;
     animation-iteration-count: infinite;
+    flex-flow: column wrap-reverse;
+    align-content: flex-start;
 }
 @keyframes flow{
  0%{
          display: flex;
+         flex-flow: row nowrap;
+         align-content: unset;
 }
  100%{
     display: flex;
@@ -137,9 +124,11 @@ body {
     
     animation: justifyFlexEnd 4.0s forwards;
     animation-iteration-count: infinite;
+    justify-content: flex-end;
 }
 @keyframes justifyFlexEnd{
  0%{
+     justify-content: flex-start;
          display: flex;
 }
  100%{
@@ -152,10 +141,12 @@ body {
     
     animation: center1 4.0s forwards;
     animation-iteration-count: infinite;
+    justify-content: center;
 }
 @keyframes center1{
  0%{
          display: flex;
+         justify-content: flex-start;
 }
  100%{
     display: flex;
@@ -167,10 +158,12 @@ body {
     
     animation: justifySpaceBetween 4.0s forwards;
     animation-iteration-count: infinite;
+    justify-content: space-between;
 }
 @keyframes justifySpaceBetween{
  0%{
          display: flex;
+         justify-content: flex-start;
 }
  100%{
     display: flex;
@@ -182,10 +175,12 @@ body {
     
     animation: justifySpaceAround 4.0s forwards;
     animation-iteration-count: infinite;
+    justify-content: space-around;
 }
 @keyframes justifySpaceAround{
  0%{
          display: flex;
+         justify-content: flex-start;
 }
  100%{
     display: flex;
@@ -197,10 +192,12 @@ body {
     
     animation: justifySpaceEvenly 4.0s forwards;
     animation-iteration-count: infinite;
+    justify-content: space-evenly;
 }
 @keyframes justifySpaceEvenly{
  0%{
          display: flex;
+         justify-content: flex-start;
 }
  100%{
     display: flex;
@@ -217,10 +214,12 @@ body {
     
     animation: AlignItemsFlexStart 4.0s forwards;
     animation-iteration-count: infinite;
+    align-items: flex-start;
 }
 @keyframes AlignItemsFlexStart{
  0%{
          display: flex;
+         align-items: stretch;
 }
  100%{
     display: flex;
@@ -232,10 +231,12 @@ body {
     
     animation: AlignItemsFlexEnd 4.0s forwards;
     animation-iteration-count: infinite;
+    align-items: flex-end;
 }
 @keyframes AlignItemsFlexEnd{
  0%{
          display: flex;
+         align-items: stretch;
 }
  100%{
     display: flex;
@@ -247,10 +248,12 @@ body {
     
     animation: AlignItemsCenter 4.0s forwards;
     animation-iteration-count: infinite;
+    align-items: center;
 }
 @keyframes AlignItemsCenter{
  0%{
          display: flex;
+         align-items: stretch;
 }
  100%{
     display: flex;
@@ -262,6 +265,7 @@ body {
     
     animation: AlignItemsBaseline 4.0s forwards;
     animation-iteration-count: infinite;
+    align-items: baseline;
 }
 @keyframes AlignItemsBaseline{
  0%{
@@ -283,7 +287,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     height: 50vw;
-    align-content: stretch;
+    align-content: flex-start;
     animation: AlignContentFlexStart 4.0s forwards;
     animation-iteration-count: infinite;
 }
@@ -304,7 +308,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     height: 50vw;
-    align-content: stretch;
+    align-content: flex-end;
     animation: AlignContentFlexEnd 4.0s forwards;
     animation-iteration-count: infinite;
 }
@@ -325,7 +329,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     height: 50vw;
-    align-content: stretch;
+    align-content: center;
     animation: AlignContentCenter 4.0s forwards;
     animation-iteration-count: infinite;
 }
@@ -346,7 +350,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     height: 50vw;
-    align-content: stretch;
+    align-content: space-between;
     animation: AlignContentSpaceBetween 4.0s forwards;
     animation-iteration-count: infinite;
 }
@@ -367,7 +371,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     height: 50vw;
-    align-content: stretch;
+    align-content: space-around;
     animation: AlignContentSpaceAround 4.0s forwards;
     animation-iteration-count: infinite;
 }
@@ -388,7 +392,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     height: 50vw;
-    align-content: stretch;
+    align-content: space-evenly;
     animation: AlignContentSpaceEvenly 4.0s forwards;
     animation-iteration-count: infinite;
 }
@@ -412,9 +416,13 @@ body {
 .order {
     animation: order 4.0s forwards;
     animation-iteration-count: infinite;
+    order: -1;
 
 }
 @keyframes order {
+    0%{
+        order: unset;
+    }
     100% {
         order: -1;
     }
@@ -423,7 +431,7 @@ body {
     flex-grow: 1;
 }
 .grow2 {
-    flex-grow: 0;
+    flex-grow: 2;
     animation: grow2 4.0s forwards;
     animation-iteration-count: infinite;
 
@@ -440,21 +448,27 @@ body {
     
     animation: shrink 4.0s forwards;
     animation-iteration-count: infinite;
-
+    flex-shrink: 6
 }
 @keyframes shrink {
+    0%{
+        flex-shrink: 0;
+    }
  
     100% {
-        flex-shrink: 3;
+        flex-shrink: 6;
     }
 }
 .basis {
     
     animation: basis 4.0s forwards;
     animation-iteration-count: infinite;
-
+    flex-basis: 20vw;
 }
 @keyframes basis {
+    0%{
+        flex-basis: unset;
+    }
     
  
     100% {
@@ -485,9 +499,13 @@ body {
 .align {
     animation: align 4.0s forwards;
     animation-iteration-count: infinite;
+    align-self: center;
 
 }
 @keyframes align {
+    0%{
+        align-self: flex-start;
+    }
     100%{
         align-self: center;
     }
@@ -499,6 +517,7 @@ body {
     height: 10vw;
     border-radius: 5px;
     display: block;
+
    
 
 }

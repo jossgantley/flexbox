@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html>
+    /*spell-checker: enable*/
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/18a57a0e15.js" crossorigin="anonymous"></script>
@@ -47,19 +49,19 @@
                 <header><h2>Introduction</h2></header>
                 <p>This documentation will overview the basic concepts of CSS Flex Box,
                     a very useful tool in the realm of CSS. Once you understand CSS Flex Box,
-                    it can make creating dynamic webpage layout almost seem effortless, particularly
+                    it can make creating dynamic webpage layouts almost seem effortless, particularly
                     if you need the layout to be responsive. 
                 </p>
             </section>
             <section  class="main-section" id="Things_You_Should_Already_Know">
                 <header><h2>Things You Should Already Know</h2></header>
-                <p>Before you get started, there are some things you shold already be familiar with.</p>
+                <p>Before you get started, there are some things you should already be familiar with.</p>
                 <ul>
                     <li>You should have a good knowledge of HTML markup, how to structure elements
                         on a webpage, and how class and id attributes can be assigned to elements.
                     </li>
                     <li>You should also have a basic understanding of CSS itself before attempting to 
-                        understand the concepts in this documentation. Particularly, how CSS Properties
+                        understand the concepts in this documentation. Particularly, how CSS properties
                         are structured and how they interact with the HTML document.
                     </li>
                 </ul>
@@ -70,7 +72,7 @@
             <section class="main-section" id="display">
                 <header><h2>display</h2></header>
                 <p>The display property is used to define the parent element(container)
-                    as a flex container. It can be set to either<em>flex</em> or <em>inline-flex</em>.
+                    as a flex container. It can be set to either<em>flex</em> or <em>inline-flex</em>.</p>
                     <div class="code-box top">
                         <code>
                             .container {
@@ -100,12 +102,12 @@
                     </ul>
                     <p>For more information on the on the difference between <em>block elements</em> and
                         <em>inline elements</em>, click <a href="https://www.pluralsight.com/blog/film-games/understand-inline-and-block-level-elements">here</a>.</p>
-                </p>
+                
             </section>
             <section class="main-section" id="flex-direction">
                 <header><h2>flex-direction</h2></header>
                 <p>The flex-direction property defines the axis and direction in which
-                    the flex-itmes are to be placed.
+                    the flex items are to be placed.
                     <div class ="illustration-container">
                     <div class="code-box">
                         <code>
@@ -188,7 +190,7 @@
                     </div>
                     <ul>
                         <li><strong>row(default):</strong> Places items from left to right
-                        on the horizontal axis</li>
+                        on the horizontal axis.</li>
                         <li><strong>row-reverse:</strong> Places items from right to left 
                         on the horizontal axis.</li>
                         <li><strong>column:</strong> Places items from top to bottom on vertical
@@ -280,7 +282,7 @@
                         </div>
                     </div>
                     <ul>
-                        <li><strong>nowrap(default): </strong> Places items all on 
+                        <li><strong>nowrap(default): </strong> Places all items on 
                         one row/column.</li>
                         <li><strong>wrap: </strong> Allows items to wrap onto 
                             an additional row/column, from top to bottom for rows, or left to right 
@@ -295,7 +297,7 @@
             <section class ="main-section"id="flex-flow">
                 <header><h2>flex-flow</h2></header>
                 <p>The flex-flow property combines the <em>flex-direction</em> and the <em>flex-wrap</em>
-                 into one property with the default value being <em>row nowrap</em></p>
+                 into one property with the default value being <em>row nowrap</em>.</p>
                  <div class ="illustration-container">
                     <div class="code-box">
                         <code>
@@ -453,7 +455,7 @@
                                 <li><strong>flex-end:</strong> The flex items are placed towards the end 
                                 of the flex-direction.</li>
                                 <li><strong>center:</strong> The flex items are placed towards the center of the 
-                                    main axis.></li>
+                                    main axis.</li>
                                 <li><strong>space-between:</strong> The flex items are evenly distributed on the main axis 
                                 with the first and last items at each end of the container.</li>
                                 <li><strong>space-around:</strong> The flex items are placed on the main axis so that there is an 
@@ -571,13 +573,13 @@
                         </div>
                         <ul>
                             <li><strong>stretch(default):</strong> The flex items stretch to fill their
-                            container on the cross axis</li>
+                            container on the cross axis.</li>
                             <li><strong>flex-start:</strong> The flex items are placed towards
                             the start of the cross axis.</li>
                             <li><strong>flex-end:</strong> The flex items are placed towards the end 
                             of the cross axis.</li>
                             <li><strong>center:</strong> The flex items are centered on the 
-                                cross axis.></li>
+                                cross axis.</li>
                             <li><strong>baseline:</strong> The baselines of the flex items are centered
                                 on the cross axis.</li>
                             
@@ -840,9 +842,9 @@
                             <li><strong>flex-start:</strong> The lines of flex items are placed towards
                             the start of the container on the cross axis.</li>
                             <li><strong>flex-end:</strong> The lines of flex items are placed towards the end 
-                            of the containeron the cross axis.</li>
+                            of the container on the cross axis.</li>
                             <li><strong>center:</strong> The lines of flex items are placed towards the center of the 
-                                cross axis.></li>
+                                cross axis.</li>
                             <li><strong>space-between:</strong> The lines of flex items are evenly distributed on the cross axis 
                             with the first and last lines of flex items at each end of the container.</li>
                             <li><strong>space-around:</strong> The lines of flex items are placed on the cross axis so that there is an 
@@ -852,7 +854,7 @@
                         </ul>
             </section>
 
-            <header class ="division"><h2>Child Properties (flex-items)</h2></header>
+            <header class ="division"><h2>Child Properties (flex items)</h2></header>
 
             <section class ="main-section"id="order">
                 <header><h2>order</h2></header>
@@ -883,7 +885,7 @@
             <section class ="main-section"id="flex-grow">
                 <header><h2>flex-grow</h2></header>
                 <p>The flex-grow property allows an item to grow in proportion to the other items.
-                    If all the items have a flex-grow property set to 1, they will each take up the same space. If you change one of the items
+                    If all the items have a flex-grow property set to 1, they will each take up the same space. If you change one of the item's
                     flex grow property to a value of 2, then it will attempt to take up twice as much space 
                     as the other items if necessary. The default value for the flex-grow property is 0 and it does not accept negative values. 
                 </p>
@@ -911,7 +913,7 @@
             <section class ="main-section"id="flex-shrink">
                 <header><h2>flex-shrink</h2></header>
                 <p>The flex-shrink property allows an item to shrink in proportion to the other items.
-                    If all the items have a flex-shrink property set to 1(default), they will each take up the same space. If you change one of the items
+                    If all the items have a flex-shrink property set to 1(default), they will each take up the same space. If you change one of the item's
                     flex shrink property to a value of 3, then it will attempt to take up three times less space 
                     as the other items if necessary. The default value for the flex-shrink property is 1 and it does not accept negative values. 
                 </p>
@@ -972,9 +974,9 @@
             </section>
             <section class ="main-section" id="flex">
                 <header><h2>flex</h2></header>
-                <p>The flex property is the combintaion of <em>flex-grow</em>, 
+                <p>The flex property is the combination of <em>flex-grow</em>, 
                 <em>flex-shrink</em> and <em>flex-basis</em> respectively with 
-            flex-shrink and flex-basis being oprional. The default is 0 1 auto.</p>
+            flex-shrink and flex-basis being optional. The default is 0 1 auto.</p>
             <div class ="illustration-container">
                 <div class="code-box">
                     <code>
